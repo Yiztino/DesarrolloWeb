@@ -4,4 +4,4 @@
 
 ### 19 años
 
-![Foto mía](./img/meImg.jpg)
+![Foto mía](./docs/img/meImg.jpg)

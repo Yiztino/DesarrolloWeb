@@ -1,0 +1,23 @@
+body {
+    font-family: sans-serif;
+    font-size: 2rem;
+    background-color: green;
+    color: greenyellow;
+    text-align: center;
+  }
+  h1 {
+    color: aqua;
+    text-align: center;
+  }
+  h2 {
+    color: rgb(229, 255, 0);
+    text-align: center;
+  }
+  h3 {
+    color: rgb(131, 255, 203);
+    text-align: center;
+  }
+  img {
+    max-width: 50%;
+    width: 500px;
+  }
