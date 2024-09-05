@@ -1,0 +1,78 @@
+h1 {
+    text-align: center;
+}
+p{
+    text-align: justify;
+    text-justify: auto;
+}
+.container{
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgb(169, 50, 54);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.body{
+    background-repeat: repeat-x;
+    background-color: rgb(169, 22, 27);
+    color: rgb(200,199,181);
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffcc00;
+    color: #333;
+}
+.ratio-16x9 {
+    margin-top: 20px;
+}
+nav{
+    background-color: gray ;
+}
+.navbar{
+    background: linear-gradient(to right, rgb(211,203,184),  rgb(165,36,40));
+}
+.nav-link:hover {
+    background-color: rgba(0, 255, 64, 0.2);
+    transition: background-color 0.3s ease;
+}
+.navbar-brand{
+    font-family:'Franklin Gothic Medium';
+    color: #fff;
+}
+.nav-item{
+    color: #fff;
+}
+.list-item{
+    
+    background-color: rgb(169, 22, 27);
+    color: rgb(200,199,181);
+}
+.list-groups{
+    background-color: rgb(169, 22, 27);
+    color: rgb(200,199,181);
+}
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+.bg-colorSecundario{
+    background-color: red;
+    padding: 20px;
+    padding-bottom: 30px;
+    padding-top: 50px;
+}
+.accordion-item {
+    background-color: rgb(174, 0, 255);
+}
+.padding-bottom{
+
+    padding-bottom: 30px;
+}
+.bg-colorContacto{
+    background-color: rgb(84, 3, 3);
+}
+.text-colorContacto{
+    color: rgb(234, 121, 104);
+}
