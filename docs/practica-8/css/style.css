@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui, sans-serif;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+.producto {
+  border: 1px solid #000000;
+  padding: 10px;
+  margin: 10px;
+}
+.carrito {
+  border: 2px solid #444;
+  padding: 10px;
+  margin-top: 20px;
+}
+.hidden {
+  display: none;
+}
+.btnProducto{
+  margin-top: auto;
+  margin-bottom: 5px;
+  max-width: min-content;
+}
+.btnRed{
+  background-color: rgba(255, 0, 0, 0.345);
+}
+.btnGreen{
+  background-color: rgba(0, 128, 0, 0.244); 
+}
+.loader {
+  display: none;
+  text-align: center;
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
