@@ -32,6 +32,45 @@ img{
 .btnGreen{
   background-color: rgba(0, 128, 0, 0.244); 
 }
+.card-text{
+  max-height: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card-text.expandido{
+  max-height: fit-content;
+  white-space: normal;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.card-body {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.card-img-top {
+  max-height: 150px; 
+  object-fit: cover; 
+}
+
+.card-title, .card-text {
+  margin-bottom: 0.5rem;
+}
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto; 
+}
+.card-footer {
+  margin-top: auto;
+}
+
 .loader {
   display: none;
   text-align: center;

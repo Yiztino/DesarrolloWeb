@@ -31,6 +31,8 @@ export function mostrarProductosDisponibles(){
     let $productoStock = d.createElement("p");
     let $buttonAnadir = d.createElement("button");
     let $buttonQuitar = d.createElement("button");
+    let $buttonLeerMas = d.createElement("button");
+    let $buttonContainer = d.createElement("div");
 
     $productoNombre.textContent = producto.nombre;
     $productoDescripcion.textContent = producto.descripcion;
@@ -38,7 +40,8 @@ export function mostrarProductosDisponibles(){
     $productoStock.textContent = `En stock: ${producto.stock}`;
     $buttonAnadir.textContent = "+";
     $buttonQuitar.textContent = "-";
-
+    $buttonLeerMas.textContent = "Leer más";
+    
     $productoImagen.src = producto.imagen; 
     $productoImagen.alt = `Imagen de ${producto.nombre}`;
 
@@ -47,24 +50,30 @@ export function mostrarProductosDisponibles(){
 
     $producto.classList.add(`${producto.class}`);
     $producto.classList.add("container");
-    $producto.classList.add("mb-3");
-    $producto.classList.add("mr-3");
-    $producto.classList.add("col-12");
-    $producto.classList.add("col-sm-6");
-    $producto.classList.add("col-md-4");
-    $producto.classList.add("col-lg-2");
+    $producto.classList.add("mb-4", "mr-3");
+    $producto.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-2" );
 
     $productoImagen.classList.add("img-fluid");
     
     $productoStock.classList.add("stock");
 
-    $buttonAnadir.classList.add("container");
-    $buttonQuitar.classList.add("container");
-    $buttonAnadir.classList.add("btnProducto");
-    $buttonQuitar.classList.add("btnProducto");
-    $buttonAnadir.classList.add("btnGreen");
-    $buttonQuitar.classList.add("btnRed");
-    
+    $buttonAnadir.classList.add("container", "btnProducto", "btnGreen");
+    $buttonQuitar.classList.add("container", "btnProducto", "btnRed");
+    $buttonLeerMas.classList.add("btn", "btn-link", "p-0");
+    //PARA QUE LOS BOTONES NO TENGAN ESE ESPACIO EN BLANCO RARO
+    $buttonContainer.classList.add("card-buttons");
+    $buttonContainer.appendChild($buttonAnadir);
+    $buttonContainer.appendChild($buttonQuitar);
+    //PARA QUE LA DESCRIPCION POS, SE MUESTRE ENTERA, JAJAJA
+    $buttonLeerMas.addEventListener("click", () => {
+      if ($productoDescripcion.classList.contains("expandido")) {
+        $productoDescripcion.classList.remove("expandido");
+        $buttonLeerMas.textContent = "Leer más";
+      } else {
+        $productoDescripcion.classList.add("expandido");
+        $buttonLeerMas.textContent = "Leer menos";
+      }
+    });
     //$buttonAnadir.classList.add("col-sm-1");
     //$buttonQuitar.classList.add("col-sm-1");
     //$buttonAnadir.classList.add("col-lg-2");
@@ -76,35 +85,39 @@ export function mostrarProductosDisponibles(){
     $producto.setAttribute(`data-tipoProducto`, producto.tipoProducto);
     $producto.setAttribute(`data-descripcion`, producto.descripcion);
 
+    let $card = d.createElement("div");
+    $card.classList.add("card", "h-100");
+
+    let $cardBody = d.createElement("div");
+    $cardBody.classList.add("card-body");
+    $productoImagen.classList.add("card-img-top", "img-fluid");
+    $productoNombre.classList.add("card-title");
+    $productoDescripcion.classList.add("card-text");
     
+    $card.appendChild($productoImagen);
+    $cardBody.appendChild($productoNombre);
+    $cardBody.appendChild($productoDescripcion);
+    $cardBody.appendChild($buttonLeerMas); 
+    $cardBody.appendChild($productoPrecio);
+    $cardBody.appendChild($productoStock);
+    $cardBody.appendChild($buttonContainer);
+    // $cardBody.appendChild($buttonAnadir);
+    // $cardBody.appendChild($buttonQuitar);
+
+    $card.appendChild($cardBody);
+    $producto.appendChild($card);
+
     $listaProductos.appendChild($producto);
-    $producto.appendChild($productoNombre);
-    $producto.appendChild($productoImagen);
-    $producto.appendChild($productoDescripcion);
-    $producto.appendChild($productoPrecio);
-    $producto.appendChild($productoStock);
-    $producto.appendChild($buttonAnadir);
-    $producto.appendChild($buttonQuitar);
+    // $listaProductos.appendChild($producto);
+    // $producto.appendChild($productoNombre);
+    // $producto.appendChild($productoImagen);
+    // $producto.appendChild($productoDescripcion);
+    // $producto.appendChild($productoPrecio);
+    // $producto.appendChild($productoStock);
+    // $producto.appendChild($buttonAnadir);
+    // $producto.appendChild($buttonQuitar);
   } 
 }
-// import { getProductos } from "./data.js";
-
-// const d = document;
-// const $listaProductos = d.querySelector("#productos")
-// let productos = [];
-// console.log(productos);
-// if(productos==null || productos < 0){productos = getProductos();
-// export function mostrarProductosDisponibles(){
-//   for(let producto of productos){
-//     if(productos==null || productos < 0){console.error("Lista de productos está vacía"); return;}
-//     let $producto = d.createElement("article");
-//     let $productoNombre = d.createElement("h3");
-//     $productoNombre.textContent = producto.nombre;
-//     $producto.setAttribute(`data-nombre`, producto.nombre);
-//     $listaProductos.appendChild($producto);
-//     $producto.appendChild($productoNombre);
-//   } 
-// }
 function agregarAlCarrito(productoNombre, cantidad) {
   for (let producto of productos) {
     if (producto.nombre === productoNombre) {
